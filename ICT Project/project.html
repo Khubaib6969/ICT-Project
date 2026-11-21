@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter</title>
+    <link rel="icon" type="image/x-icon" href="favicon 2.jpg">
+    
+    
+    <style>
+        img {
+            width: 400px;
+            border-radius: 30px;
+            float: right;
+            margin-right: 10px;
+        }
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: linen;
+            margin-left: 40px;
+        }
+
+        h1 {
+            text-align: left;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 50px;
+            
+            margin: 0px;
+            color: DarkCyan;
+        }
+
+        h2 {
+            color: maroon;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        .result {
+            font-weight: bold;
+            color: DarkCyan;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="logo1.jpg" alt="Unit Converter Logo" />
+    <h1>Unit Converter</h1>
+    <p>Enter a value below to convert between units.</p>
+    <hr>
+
+    
+    <h2>Length (Kilometers to Miles)</h2>
+    <form>
+        <label for="kmInput">Kilometers:</label>
+        <input type="number" id="kmInput" placeholder="Enter km">
+        <button type="button" onclick="convertLength()">Convert</button>
+    </form>
+    <p class="result" id="lengthResult">Result: 0 miles</p>
+
+    <hr>
+
+    
+    <h2>Weight (Kilograms to Pounds)</h2>
+    <form>
+        <label for="kgInput">Kilograms:</label>
+        <input type="number" id="kgInput" placeholder="Enter kg">
+        <button type="button" onclick="convertWeight()">Convert</button>
+    </form>
+    <p class="result" id="weightResult">Result: 0 lbs</p>
+
+    <hr>
+
+    
+    <h2>Temperature (Celsius to Fahrenheit)</h2>
+    <form>
+        <label for="cInput">Celsius:</label>
+        <input type="number" id="cInput" placeholder="Enter °C">
+        <button type="button" onclick="convertTemp()">Convert</button>
+    </form>
+    <p class="result" id="tempResult">Result: 32 °F</p>
+
+    
+    <script>
+        function convertLength() {
+            let km = document.getElementById("kmInput").value;
+            let miles = km * 0.621371;
+            document.getElementById("lengthResult").innerHTML = "Result: " + miles.toFixed(2) + " miles";
+        }
+
+        function convertWeight() {
+            let kg = document.getElementById("kgInput").value;
+            let lbs = kg * 2.20462;
+            document.getElementById("weightResult").innerHTML = "Result: " + lbs.toFixed(2) + " lbs";
+        }
+
+        function convertTemp() {
+            let c = document.getElementById("cInput").value;
+            let f = (c * 9/5) + 32;
+            document.getElementById("tempResult").innerHTML = "Result: " + f.toFixed(2) + " °F";
+        }
+    </script>
+
+</body>
+</html>
